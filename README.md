@@ -3,11 +3,15 @@
 Compilação
 ```
 javac -cp ".;../lib/*" UDPServer.java
+```
+```
 javac -cp ".;../lib/*" UDPClient.java
 ```
 Execução
 ```
 java -cp ".;../lib/*" UDPServer.java
+```
+```
 java -cp ".;../lib/*" UDPClient.java
 ```
 
@@ -15,10 +19,14 @@ java -cp ".;../lib/*" UDPClient.java
 Compilação
 ```
 javac -cp ".;lib/*" UDPServer.java
+```
+```
 javac -cp ".;lib/*" UDPClient.java
 ```
 Execução
 ```
 java -cp ".;lib/*" UDPServer.java
+```
+```
 java -cp ".;lib/*" UDPClient.java
 ```
