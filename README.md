@@ -2,31 +2,31 @@
 ## Se lib estiver uma pasta antes do src
 Compilação
 ```
-javac -cp ".;../lib/*" UDPServer.java
+javac -cp ".;../lib/*" ServerUDP.java
 ```
 ```
-javac -cp ".;../lib/*" UDPClient.java
+javac -cp ".;../lib/*" ClientUDP.java
 ```
 Execução
 ```
-java -cp ".;../lib/*" UDPServer.java
+java -cp ".;../lib/*" ServerUDP.java
 ```
 ```
-java -cp ".;../lib/*" UDPClient.java
+java -cp ".;../lib/*" ClientUDP.java
 ```
 
 ## Se a lib estiver dentro da pasta src
 Compilação
 ```
-javac -cp ".;lib/*" UDPServer.java
+javac -cp ".;lib/*" ServerUDP.java
 ```
 ```
-javac -cp ".;lib/*" UDPClient.java
+javac -cp ".;lib/*" ClientUDP.java
 ```
 Execução
 ```
-java -cp ".;lib/*" UDPServer.java
+java -cp ".;lib/*" ServerUDP.java
 ```
 ```
-java -cp ".;lib/*" UDPClient.java
+java -cp ".;lib/*" ClientUDP.java
 ```
