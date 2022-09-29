@@ -5,7 +5,7 @@ import org.jasypt.util.text.BasicTextEncryptor;
 class ClientUDP {
 	public static void main(String args[]) throws Exception {
 		BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
-        textEncryptor.setPassword("senha");
+        	textEncryptor.setPassword("senha");
 
 		BufferedReader inFromUser = new BufferedReader(new InputStreamReader(System.in));
 
@@ -36,7 +36,7 @@ class ClientUDP {
 		System.out.println("Texto recebido do servidor:" + modifiedSentence);
 
 		String decryptText = textEncryptor.decrypt(modifiedSentence);
-        System.out.println("TEXTO DESCRIPTOGRAFADO:" + decryptText);
+        	System.out.println("TEXTO DESCRIPTOGRAFADO:" + decryptText);
 
 		clientSocket.close();
 		System.out.println("Socket cliente fechado!");
