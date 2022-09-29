@@ -50,3 +50,10 @@ Compilação
 ```
 javac -cp "/home/jonathan/Documentos/lab-SD/UDP-Socket-v2-main/lib/*" ServerUDP.java
 ```
+Execução
+```
+java -cp "/home/jonathan/Documentos/lab-SD/UDP-Socket-v2-main/lib/*" ServerUDP.java _porta_
+```
+```
+java -cp "/home/jonathan/Documentos/lab-SD/UDP-Socket-v2-main/lib/*" ClientUDP.java _ip_ _porta_
+```
