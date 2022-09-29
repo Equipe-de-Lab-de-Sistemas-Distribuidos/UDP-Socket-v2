@@ -9,36 +9,37 @@ class ServerUDP {
 		int porta = Integer.parseInt(args[0]);
 		
 		try (DatagramSocket serverSocket = new DatagramSocket(porta)) {
-			byte[] receiveData;
-			byte[] sendData;
-			while (true) {
-				receiveData = new byte[1024];
+            		byte[] receiveData;
+            		byte[] sendData;
+
+            		while (true) {
+            			receiveData = new byte[1024];
 				sendData = new byte[1024];
 
-				DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
-				System.out.println("Esperando por datagrama UDP na porta " + porta);
-				serverSocket.receive(receivePacket);
-				System.out.print("Datagrama UDP recebido...");
+            			DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
+            			System.out.println("Esperando por datagrama UDP na porta " + porta);
+            			serverSocket.receive(receivePacket);
+            			System.out.print("Datagrama UDP recebido...");
 
-				String sentence = new String(receivePacket.getData());
-				System.out.println("Msg recebida do cliente " + sentence);
+            			String sentence = new String(receivePacket.getData());
+            			System.out.println("Msg recebida do cliente " + sentence);
+            	
+            			InetAddress IPAddress = receivePacket.getAddress();
 
-				InetAddress IPAddress = receivePacket.getAddress();
+            			int port = receivePacket.getPort();
 
-				int port = receivePacket.getPort();
+            			String encryptedText = textEncryptor.encrypt(sentence);
+                		System.out.println("Texto Criptografado: "+encryptedText);
 
-				String encryptedText = textEncryptor.encrypt(sentence);
-				System.out.println("Texto Criptografado: "+encryptedText);
+            			sendData = encryptedText.getBytes();
 
-				sendData = encryptedText.getBytes();
+            			DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port);
+            	
+            			System.out.print("Enviando " + sendData + "...");
 
-				DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port);
-
-				System.out.print("Enviando " + sendData + "...");
-
-				serverSocket.send(sendPacket);
-				System.out.println("OK\n");
-			    }
-		}
+            			serverSocket.send(sendPacket);
+            			System.out.println("OK\n");
+            		}
+        	}
 	}
 }
