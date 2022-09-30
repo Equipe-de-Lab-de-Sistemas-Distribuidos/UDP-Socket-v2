@@ -40,10 +40,10 @@ javac -cp "../lib/*" ClientUDP.java
 ```
 Execução
 ```
-java -cp ".;../lib/*" ServerUDP.java _porta_
+java -cp "../lib/*" ServerUDP.java _porta_
 ```
 ```
-java -cp ".;../lib/*" ClientUDP.java _ip_ _porta_
+java -cp "../lib/*" ClientUDP.java _ip_ _porta_
 ```
 ou
 Compilação
